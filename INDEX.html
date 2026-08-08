@@ -1,0 +1,963 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Anniversary Mummy & Daddy ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
+    font-family:Arial,sans-serif;
+    background:
+        radial-gradient(circle at 50% 20%,#6b1555 0%,transparent 35%),
+        linear-gradient(135deg,#100018,#3d0734,#09000f);
+    color:white;
+}
+
+#app{
+    width:100vw;
+    height:100vh;
+    position:relative;
+    overflow:hidden;
+}
+
+/* STARS */
+
+.star{
+    position:absolute;
+    width:4px;
+    height:4px;
+    background:white;
+    border-radius:50%;
+    box-shadow:0 0 8px white;
+    animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+    from{opacity:.2;transform:scale(.7);}
+    to{opacity:1;transform:scale(1.5);}
+}
+
+/* INTRO */
+
+#intro{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    z-index:5;
+    transition:opacity 1s ease;
+}
+
+/* FAMILY */
+
+.family{
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+    gap:12px;
+    margin-bottom:25px;
+    animation:familyFloat 4s ease-in-out infinite;
+}
+
+@keyframes familyFloat{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-7px);}
+}
+
+.person{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    position:relative;
+    animation:personFloat 3s ease-in-out infinite;
+}
+
+.person:nth-child(2){animation-delay:.3s;}
+.person:nth-child(3){animation-delay:.6s;}
+.person:nth-child(4){animation-delay:.9s;}
+
+@keyframes personFloat{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-8px);}
+}
+
+/* HEAD */
+
+.head{
+    width:68px;
+    height:68px;
+    background:#f5b27d;
+    border:3px solid white;
+    border-radius:50%;
+    position:relative;
+    z-index:2;
+}
+
+/* HAIR */
+
+.hair{
+    position:absolute;
+    top:-7px;
+    left:-2px;
+    width:66px;
+    height:30px;
+    background:#29150f;
+    border-radius:50px 50px 15px 15px;
+}
+
+/* EYES */
+
+.head:before,
+.head:after{
+    content:"";
+    position:absolute;
+    width:7px;
+    height:9px;
+    background:#25151b;
+    border-radius:50%;
+    top:29px;
+}
+
+.head:before{left:17px;}
+.head:after{right:17px;}
+
+/* SMILE */
+
+.body:before{
+    content:"⌣";
+    position:absolute;
+    top:-42px;
+    left:50%;
+    transform:translateX(-50%);
+    color:#8d3150;
+    font-size:18px;
+    z-index:5;
+}
+
+/* BODY */
+
+.body{
+    width:78px;
+    height:95px;
+    margin-top:5px;
+    border:3px solid white;
+    border-radius:30px 30px 14px 14px;
+    position:relative;
+    background:#e91e63;
+}
+
+/* MUMMY */
+
+.mummy .body{
+    background:#b83b9b;
+}
+
+/* ELDER DAUGHTER */
+
+.daughter .head{
+    width:58px;
+    height:58px;
+}
+
+.daughter .hair{
+    width:58px;
+    height:34px;
+    background:#392018;
+}
+
+.daughter .body{
+    width:62px;
+    height:82px;
+    background:#ff6fae;
+}
+
+/* DAUGHTER HAIR SIDES */
+
+.daughter .hair:before,
+.daughter .hair:after{
+    content:"";
+    position:absolute;
+    width:13px;
+    height:35px;
+    background:#392018;
+    top:16px;
+    border-radius:10px;
+}
+
+.daughter .hair:before{left:-4px;}
+.daughter .hair:after{right:-4px;}
+
+/* YOUNGER SON */
+
+.son .head{
+    width:52px;
+    height:52px;
+}
+
+.son .hair{
+    width:52px;
+    height:26px;
+}
+
+.son .body{
+    width:55px;
+    height:70px;
+    background:#4caf50;
+}
+
+.son .head:before,
+.son .head:after{
+    top:21px;
+}
+
+/* HEARTS */
+
+.floatingHeart{
+    position:absolute;
+    font-size:24px;
+    animation:heartFloat 4s infinite ease-in-out;
+    opacity:.9;
+}
+
+.h1{left:25%;top:25%;}
+.h2{right:25%;top:30%;animation-delay:1s;}
+.h3{left:18%;bottom:25%;animation-delay:2s;}
+.h4{right:18%;bottom:30%;animation-delay:1.5s;}
+
+@keyframes heartFloat{
+    0%,100%{
+        transform:translateY(0) scale(1);
+        opacity:.5;
+    }
+    50%{
+        transform:translateY(-25px) scale(1.2);
+        opacity:1;
+    }
+}
+
+/* TITLE */
+
+.title{
+    font-size:clamp(28px,7vw,58px);
+    color:#ffd0ed;
+    text-shadow:
+        0 0 12px #ff1493,
+        0 0 30px #ff1493,
+        0 0 60px #ff69b4;
+    animation:titleGlow 2s infinite alternate;
+}
+
+@keyframes titleGlow{
+    from{
+        transform:scale(1);
+        text-shadow:0 0 12px #ff1493;
+    }
+    to{
+        transform:scale(1.03);
+        text-shadow:
+            0 0 25px #ff1493,
+            0 0 55px #ff69b4;
+    }
+}
+
+.subtitle{
+    margin-top:12px;
+    font-size:17px;
+    color:#ffd9ee;
+}
+
+/* PHOTO SLIDESHOW */
+
+#slideshow{
+    position:absolute;
+    inset:0;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:4;
+}
+
+.photo{
+    position:absolute;
+    width:min(88vw,600px);
+    height:min(68vh,500px);
+    object-fit:cover;
+    border:5px solid white;
+    border-radius:25px;
+    box-shadow:
+        0 0 25px #ff1493,
+        0 0 60px rgba(255,20,147,.4);
+    opacity:0;
+    transform:scale(.8) rotate(-2deg);
+    transition:1s ease;
+}
+
+.photo.active{
+    opacity:1;
+    transform:scale(1) rotate(0deg);
+}
+
+/* LETTER SCREEN */
+
+#letterScreen{
+    position:absolute;
+    inset:0;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    z-index:10;
+}
+
+/* ENVELOPE */
+
+.envelope{
+    width:min(85vw,500px);
+    height:300px;
+    position:relative;
+    cursor:pointer;
+    animation:envelopeFloat 2s infinite ease-in-out;
+}
+
+@keyframes envelopeFloat{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-8px);}
+}
+
+.envelopeBody{
+    position:absolute;
+    inset:0;
+    background:#ff8fcf;
+    border-radius:14px;
+    box-shadow:
+        0 0 25px #ff1493,
+        0 0 55px rgba(255,20,147,.5);
+}
+
+.flap{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:50%;
+    background:#ffc1e5;
+    clip-path:polygon(0 0,100% 0,50% 100%);
+    transform-origin:top;
+    transition:1s ease;
+    z-index:3;
+}
+
+.envelope.open .flap{
+    transform:rotateX(180deg);
+}
+
+.heart{
+    position:absolute;
+    top:43%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    font-size:55px;
+    z-index:4;
+    animation:heartBeat 1.2s infinite;
+}
+
+@keyframes heartBeat{
+    0%,100%{
+        transform:translate(-50%,-50%) scale(1);
+    }
+    50%{
+        transform:translate(-50%,-50%) scale(1.2);
+    }
+}
+
+.clickText{
+    margin-top:25px;
+    font-size:18px;
+    color:#ffd9ed;
+}
+
+/* LETTER */
+
+.paper{
+    position:absolute;
+    width:min(90vw,550px);
+    height:min(78vh,600px);
+    padding:22px;
+    background:#fff8fc;
+    color:#5a183f;
+    border-radius:18px;
+    box-shadow:
+        0 0 25px #ff1493,
+        0 0 60px rgba(255,20,147,.4);
+    text-align:center;
+    transform:translateY(110vh);
+    transition:1.2s ease;
+    z-index:8;
+}
+
+.paper.show{
+    transform:translateY(0);
+}
+
+.paper h1{
+    color:#d4146d;
+    font-size:28px;
+    line-height:1.3;
+    margin-bottom:10px;
+}
+
+.bigHeart{
+    font-size:40px;
+    margin:5px;
+    animation:bigHeart 1.2s infinite;
+}
+
+@keyframes bigHeart{
+    0%,100%{transform:scale(1);}
+    50%{transform:scale(1.15);}
+}
+
+/* SCROLL */
+
+.letterScroll{
+    height:68%;
+    overflow-y:auto;
+    padding:10px 15px;
+    text-align:left;
+    scroll-behavior:smooth;
+}
+
+.letterScroll::-webkit-scrollbar{
+    width:5px;
+}
+
+.letterScroll::-webkit-scrollbar-track{
+    background:#ffe5f2;
+    border-radius:10px;
+}
+
+.letterScroll::-webkit-scrollbar-thumb{
+    background:#ff69b4;
+    border-radius:10px;
+}
+
+#letterText{
+    font-size:18px;
+    line-height:1.9;
+    white-space:pre-line;
+    word-wrap:break-word;
+}
+
+/* REPLAY */
+
+#replay{
+    display:none;
+    position:absolute;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    border:none;
+    padding:13px 30px;
+    border-radius:30px;
+    background:#ff1493;
+    color:white;
+    font-size:17px;
+    cursor:pointer;
+    box-shadow:0 0 20px #ff1493;
+    z-index:20;
+}
+
+#replay:hover{
+    transform:translateX(-50%) scale(1.08);
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    .family{
+        gap:3px;
+        transform:scale(.72);
+        margin-bottom:15px;
+    }
+
+    .title{
+        font-size:30px;
+    }
+
+    .subtitle{
+        font-size:14px;
+    }
+
+    .floatingHeart{
+        font-size:18px;
+    }
+
+    .paper{
+        width:91vw;
+        height:78vh;
+        padding:18px;
+    }
+
+    .paper h1{
+        font-size:23px;
+    }
+
+    #letterText{
+        font-size:16px;
+        line-height:1.8;
+    }
+
+    .envelope{
+        width:85vw;
+        height:250px;
+    }
+
+    .clickText{
+        font-size:15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="app">
+
+<!-- STARS -->
+
+<div class="star" style="left:8%;top:15%;"></div>
+<div class="star" style="left:20%;top:32%;"></div>
+<div class="star" style="left:42%;top:10%;"></div>
+<div class="star" style="left:67%;top:17%;"></div>
+<div class="star" style="left:90%;top:12%;"></div>
+<div class="star" style="left:82%;top:50%;"></div>
+<div class="star" style="left:13%;top:72%;"></div>
+<div class="star" style="left:55%;top:82%;"></div>
+
+<!-- FLOATING HEARTS -->
+
+<div class="floatingHeart h1">💕</div>
+<div class="floatingHeart h2">💖</div>
+<div class="floatingHeart h3">💗</div>
+<div class="floatingHeart h4">❤️</div>
+
+
+<!-- =========================
+     CUTE FAMILY INTRO
+========================= -->
+
+<section id="intro">
+
+    <div class="family">
+
+        <!-- DADDY -->
+
+        <div class="person daddy">
+
+            <div class="head">
+                <div class="hair"></div>
+            </div>
+
+            <div class="body"></div>
+
+        </div>
+
+
+        <!-- MUMMY -->
+
+        <div class="person mummy">
+
+            <div class="head">
+                <div class="hair"></div>
+            </div>
+
+            <div class="body"></div>
+
+        </div>
+
+
+        <!-- ELDER DAUGHTER -->
+
+        <div class="person daughter">
+
+            <div class="head">
+                <div class="hair"></div>
+            </div>
+
+            <div class="body"></div>
+
+        </div>
+
+
+        <!-- YOUNGER SON -->
+
+        <div class="person son">
+
+            <div class="head">
+                <div class="hair"></div>
+            </div>
+
+            <div class="body"></div>
+
+        </div>
+
+    </div>
+
+
+    <h1 class="title">
+        Happy Anniversary
+        <br>
+        Mummy & Daddy ❤️
+    </h1>
+
+    <p class="subtitle">
+        Our beautiful family forever 🥰🫂
+    </p>
+
+</section>
+
+
+<!-- =========================
+     3 ORIGINAL PHOTOS
+========================= -->
+
+<section id="slideshow">
+
+    <img src="photo-1.jpeg"
+         class="photo active"
+         alt="Family Photo 1">
+
+    <img src="photo-2.jpeg"
+         class="photo"
+         alt="Family Photo 2">
+
+    <img src="photo-3.jpeg"
+         class="photo"
+         alt="Family Photo 3">
+
+</section>
+
+
+<!-- =========================
+     LETTER
+========================= -->
+
+<section id="letterScreen">
+
+    <div class="envelope" id="envelope">
+
+        <div class="envelopeBody"></div>
+
+        <div class="flap"></div>
+
+        <div class="heart">
+            ❤️
+        </div>
+
+    </div>
+
+    <div class="clickText">
+        Tap the envelope to open your letter 💌
+    </div>
+
+
+    <!-- LETTER PAPER -->
+
+    <div class="paper" id="paper">
+
+        <div class="bigHeart">
+            ❤️
+        </div>
+
+        <h1>
+            Happy Anniversary
+            <br>
+            Mummy & Daddy ❤️
+        </h1>
+
+        <div class="letterScroll" id="letterScroll">
+
+            <p id="letterText"></p>
+
+        </div>
+
+        <div class="bigHeart">
+            💖
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- REPLAY -->
+
+<button id="replay">
+    🔄 Replay
+</button>
+
+</div>
+
+
+<script>
+
+/* ELEMENTS */
+
+const intro =
+document.getElementById("intro");
+
+const slideshow =
+document.getElementById("slideshow");
+
+const letterScreen =
+document.getElementById("letterScreen");
+
+const envelope =
+document.getElementById("envelope");
+
+const paper =
+document.getElementById("paper");
+
+const replay =
+document.getElementById("replay");
+
+const photos =
+document.querySelectorAll(".photo");
+
+const letterText =
+document.getElementById("letterText");
+
+const letterScroll =
+document.getElementById("letterScroll");
+
+
+let currentPhoto = 0;
+let slideTimer = null;
+let typingTimer = null;
+
+
+/* =========================
+   EXACT LETTER
+========================= */
+
+const message = `Being together with you all makes me so happy. ❤️
+
+I truly wish that we always stay together just like this. 🥰
+
+You are the beautiful blessing that God gave us. 🙏✨
+
+After you came into our lives as our Daddy, so many things changed for the better. ❤️
+
+For me, all I want is to see everything that a mother and father should do for their child happen beautifully and correctly.
+
+That alone is enough to make me happy. 🥹❤️
+
+I wish that we always stay together like this, Daddy. 🤗💖
+
+Our bond started with a beautiful father-like feeling, and I never want that bond to break, no matter what happens. 🫂❤️
+
+I just want this beautiful bond to stay forever. ♾️❤️
+
+Love you, Daddy. 🥹❤️`;
+
+
+/* RESET */
+
+function resetExperience(){
+
+    clearInterval(slideTimer);
+    clearTimeout(typingTimer);
+
+    currentPhoto = 0;
+
+    letterText.textContent = "";
+
+    letterScroll.scrollTop = 0;
+
+    paper.classList.remove("show");
+
+    envelope.classList.remove("open");
+
+    replay.style.display = "none";
+
+    slideshow.style.display = "none";
+
+    letterScreen.style.display = "none";
+
+    photos.forEach(photo=>{
+        photo.classList.remove("active");
+    });
+}
+
+
+/* START */
+
+function startExperience(){
+
+    resetExperience();
+
+    intro.style.display = "flex";
+    intro.style.opacity = "1";
+
+
+    /* FAMILY SCREEN */
+
+    setTimeout(()=>{
+
+        intro.style.opacity = "0";
+
+        setTimeout(()=>{
+
+            intro.style.display = "none";
+
+            slideshow.style.display = "flex";
+
+            startSlideshow();
+
+        },1000);
+
+    },4500);
+}
+
+
+/* SLIDESHOW */
+
+function startSlideshow(){
+
+    currentPhoto = 0;
+
+    photos.forEach(photo=>{
+        photo.classList.remove("active");
+    });
+
+    photos[0].classList.add("active");
+
+
+    slideTimer = setInterval(()=>{
+
+        photos[currentPhoto].classList.remove("active");
+
+        currentPhoto++;
+
+
+        if(currentPhoto >= photos.length){
+
+            clearInterval(slideTimer);
+
+            setTimeout(()=>{
+
+                slideshow.style.display = "none";
+
+                letterScreen.style.display = "flex";
+
+            },1000);
+
+            return;
+        }
+
+
+        photos[currentPhoto].classList.add("active");
+
+    },3500);
+}
+
+
+/* TYPING + AUTO SCROLL */
+
+function typeLetter(){
+
+    clearTimeout(typingTimer);
+
+    letterText.textContent = "";
+
+    letterScroll.scrollTop = 0;
+
+    let index = 0;
+
+
+    function type(){
+
+        if(index >= message.length){
+            return;
+        }
+
+        letterText.textContent += message.charAt(index);
+
+        index++;
+
+
+        /* AUTO SCROLL */
+
+        letterScroll.scrollTop =
+            letterScroll.scrollHeight;
+
+
+        typingTimer = setTimeout(type,35);
+    }
+
+
+    type();
+}
+
+
+/* OPEN ENVELOPE */
+
+envelope.addEventListener("click",()=>{
+
+    envelope.classList.add("open");
+
+
+    setTimeout(()=>{
+
+        paper.classList.add("show");
+
+        replay.style.display = "block";
+
+
+        setTimeout(()=>{
+
+            typeLetter();
+
+        },700);
+
+    },900);
+
+});
+
+
+/* REPLAY */
+
+replay.addEventListener("click",()=>{
+
+    startExperience();
+
+});
+
+
+/* START WHEN PAGE OPENS */
+
+window.addEventListener("load",()=>{
+
+    startExperience();
+
+});
+
+</script>
+
+</body>
+</html>
+```
